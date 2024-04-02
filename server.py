@@ -53,8 +53,9 @@ def sortedResults():
     end = float(request.args.get('maxpercentage'))
     results = int(request.args.get('results'))
     caste = str(request.args.get('caste'))
+    branch = str(request.args.get('branch'))
     c = algorithms()
-    my_list = c.get_by_range(start, end, results, caste)
+    my_list = c.get_by_range(start, end, results, caste,branch)
     # return render_template("sortedResults.html", my_list=my_list, size=len(my_list))
     return render_template("sortedResults.html", my_list=my_list, size=len(my_list), college_links=college_links)
 if __name__ == '__main__':
