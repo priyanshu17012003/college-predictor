@@ -16,6 +16,10 @@ def about():
 def exam():
     return render_template('exam.html')
 
+@app.route('/courses')
+def courses():
+    return render_template('courses.html')
+
 
 @app.route('/predictCollege')
 def predictCollege():
@@ -46,6 +50,22 @@ def results():
 @app.route('/colleges')
 def colleges():
     return render_template("colleges.html")
+
+@app.route('/web')
+def web():
+    return render_template("web.html")
+
+@app.route('/Devops')
+def Devops():
+    return render_template("Devops.html")
+
+@app.route('/Python')
+def Python():
+    return render_template("Python.html")
+
+@app.route('/Math')
+def Math():
+    return render_template("Math.html")
 
 @app.route('/sortedResults')
 def sortedResults():

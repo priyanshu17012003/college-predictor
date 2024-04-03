@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Gurukul</title>
+    <link
+      rel="icon"
+      type="images/png"
+      href="images/logo1-removebg-preview.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .dropdown-content {
+        display: none;
+        list-style-type: none;
+      }
+
+      body {
+        background-color: beige;
+      }
+      .navbar {
+        background: linear-gradient(to right, #ff8c00, #ff4500);
+      }
+      .nav-link {
+        text-decoration: none;
+        color: black;
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+
+      .active-color {
+        color: white;
+        font-size: 1.6rem;
+      }
+      .navbar-brand {
+        text-decoration: none;
+        color: black;
+        font-size: 1.6rem;
+        font-weight: 700;
+      }
+      .nav-item {
+        transition: background 0.2s ease;
+      }
+      .nav-item:hover {
+        border-radius: 1.5rem;
+      }
+      .active {
+        background-color: white;
+        border-radius: 1.2rem;
+        font-size: 1.6rem;
+      }
+      .btn {
+        background-color: #ff8c00;
+      }
+      .btn:hover {
+        background: linear-gradient(to right, #ff8c00, #ff4500);
+        color: black;
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--
+    ===================
+        NAVIGATION
+    ===================
+    -->
+
+    <nav class="navbar navbar-expand-sm mb-3">
+      <div class="container">
+        <a href="{{url_for('index')}}" class="navbar-brand"
+          >College Predictor</a
+        >
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#Nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="Nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="{{url_for('index')}}" class="nav-link">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{url_for('colleges')}}" class="nav-link">COLLEGES</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{url_for('about')}}" class="nav-link">DETAILS</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{url_for('exam')}}" class="nav-link" id="about-link"
+                >EXAM</a
+              >
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('courses')}}">Course</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--
+    ==============
+        Course 
+    ==============
+    -->
+    <section class="course-section sec-padding" id="course">
+      <div class="container">
+        <h2 class="text-center title-text">Online Courses</h2>
+        <div class="card-deck">
+          <div class="row row-cols-1 row-cols-md-3 g-2">
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="./college-prediction-webite/templates/images/picture/Full-Stack-Web-Developer-in.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title mt-4">Full Stack Developer</h5>
+                  <a class="btn btn-lg" href="/web" role="button"
+                    >Start learning</a
+                  >
+                </div>
+                <div class="card-footer">
+                  <div class="d-flex justify-content-between">
+                    <div class="date d-flex">
+                      <img src="images/icon/people.png" alt="" />
+                      <h6>Unlimited</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="images/picture/devops-engineer.png"
+                  class="card-img-top"
+                  height="176px"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title mt-2">Devops web developer</h5>
+                  <a class="btn btn-lg" href="/Devops" role="button"
+                    >Start learning</a
+                  >
+                </div>
+                <div class="card-footer">
+                  <div class="d-flex justify-content-between">
+                    <div class="date d-flex">
+                      <img src="images/icon/people.png" alt="" />
+                      <h6>Unlimited</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="images/picture/Banner-Python-Developer.png"
+                  class="card-img-top"
+                  height="178px"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title mt-2">Python Developer</h5>
+                  <a class="btn btn-lg" href="/Python" role="button"
+                    >Start learning</a
+                  >
+                </div>
+                <div class="card-footer">
+                  <div class="d-flex justify-content-between">
+                    <div class="date d-flex">
+                      <img src="images/icon/people.png" alt="" />
+                      <h6>Unlimited</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="images/picture/Full-Stack-Web-Developer-in.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title mt-2">Math</h5>
+                  <a class="btn btn-lg" href="/Math" role="button"
+                    >Start learning</a
+                  >
+                </div>
+                <div class="card-footer">
+                  <div class="d-flex justify-content-between">
+                    <div class="date d-flex">
+                      <img src="images/icon/people.png" alt="" />
+                      <h6>Unlimited</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="images/picture/Full-Stack-Web-Developer-in.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title mt-2">Physics</h5>
+                  <a class="btn btn-lg" href="/Physics" role="button"
+                    >Start learning</a
+                  >
+                </div>
+                <div class="card-footer">
+                  <div class="d-flex justify-content-between">
+                    <div class="date d-flex">
+                      <img src="images/icon/people.png" alt="" />
+                      <h6>Unlimited</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img
+                  src="images/picture/Full-Stack-Web-Developer-in.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title mt-2">Chemistry</h5>
+                  <a class="btn btn-lg" href="/Chemistry" role="button"
+                    >Start learning</a
+                  >
+                </div>
+                <div class="card-footer">
+                  <div class="d-flex justify-content-between">
+                    <div class="date d-flex">
+                      <img src="images/icon/people.png" alt="" />
+                      <h6>Unlimited</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="images/picture/Full-Stack-Web-Developer-in.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title mt-2">Biology</h5>
+                  <a class="btn btn-lg" href="/Biology" role="button"
+                    >Start learning</a
+                  >
+                </div>
+                <div class="card-footer">
+                  <div class="d-flex justify-content-between">
+                    <div class="date d-flex">
+                      <img src="images/icon/people.png" alt="" />
+                      <h6>Unlimited</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function toggleDropdown(section) {
+        var content = document.getElementById(section);
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      }
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Gurukul - DevOps</title>
+    <link rel="icon" type="images/png" href="images/logo1-removebg-preview.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* Add your custom styles here */
+        .dropdown-content {
+            display: none;
+            list-style-type: none;
+        }
+
+        body {
+        background-color: beige;
+      }
+      .navbar {
+        background: linear-gradient(to right, #ff8c00, #ff4500);
+      }
+      .nav-link {
+        text-decoration: none;
+        color: black;
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+
+      .active-color {
+        color: white;
+        font-size: 1.6rem;
+      }
+      .navbar-brand {
+        text-decoration: none;
+        color: black;
+        font-size: 1.6rem;
+        font-weight: 700;
+      }
+      .nav-item {
+        transition: background 0.2s ease;
+      }
+      .nav-item:hover {
+        border-radius: 1.5rem;
+      }
+      .active {
+        background-color: white;
+        border-radius: 1.2rem;
+        font-size: 1.6rem;
+      }
+      .btn {
+        background-color: #ff8c00;
+      }
+      .btn:hover {
+        background: linear-gradient(to right, #ff8c00, #ff4500);
+        color: black;
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+
+    
+
+    section {
+        padding: 40px 0;
+    }
+      
+      section#social {
+        text-align: center;
+    }
+
+    .social-icons a {
+        display: inline-block;
+        margin: 0 10px;
+        font-size: 24px;
+        color: #007bff; /* Change to your preferred color */
+    }
+
+    iframe{
+       border-radius: 10px;
+       
+
+    }
+
+    .sidebar{
+        
+        border-radius: 10px;
+        
+        padding-top: 20px;
+    
+    }
+
+    footer {
+        
+        bottom: 0;
+        width: 100%;
+
+    }
+
+    
+    </style> 
+</head>
+<body>
+    <!--
+    ===================
+        NAVIGATION
+    ===================
+    -->
+    <nav class="navbar navbar-expand-sm mb-3">
+        <div class="container">
+          <a href="{{url_for('index')}}" class="navbar-brand"
+            >College Predictor</a
+          >
+          <button
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#Nav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="Nav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a href="{{url_for('index')}}" class="nav-link">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url_for('colleges')}}" class="nav-link">COLLEGES</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url_for('about')}}" class="nav-link">DETAILS</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url_for('exam')}}" class="nav-link" id="about-link"
+                  >EXAM</a
+                >
+              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="{{url_for('courses')}}">Course</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  <!-- Custom CSS -->
+    
+
+
+<!-- Home Section -->
+<section id="home" class="container mt-5">
+    <h1>Welcome to Our Course Website</h1>
+    <p>Learn and grow with our expertly crafted courses.</p>
+</section>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <h5 class="my-4">Lecture</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#html">
+                            L1-:DevOps Start
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#css">
+                            L2-:Git and GitHub
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#js">
+                            L3-:DevOps with GitLab CI
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#react">
+                            L4-:Terraform Course
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#node">
+                            L5-:Docker Course
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#redux">
+                            L6-:Kubernetes Coures
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mern">
+                            L7-:AWS Cloud Coures
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tailwind">
+                            L8-:DevSecOps Coures
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#typescript">
+                            L9-:Bash Scripting Coures
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#next">
+                            L10-:CISSP Certification Coures
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nest">
+                            L11-:Web Pentesting
+                        </a>
+                    </li>
+                    <!-- Add more lectures as needed -->
+                </ul>
+            </div>
+        </nav>
+        
+                <!-- Main Content -->
+                <main role="main" id="html" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/j5Zsa_eOXeY?si=EI1c1aTe3mijClso" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">DevOps Engineering Course for Beginners</h2>
+            <p class="lead"><section>
+                <p>Embark on your DevOps journey with our specially crafted course for beginners. Whether you're a software enthusiast, a developer, or an IT professional, this course is designed to demystify DevOps principles and practices.</p>
+                <p>What you'll learn:</p>
+                <ul>
+                  <li>Understanding the core concepts of DevOps and its significance in modern software development.</li>
+                  <li>Exploring popular DevOps tools for version control, continuous integration, and deployment.</li>
+                  <li>Implementing best practices for collaboration between development and operations teams.</li>
+                  <li>Automating repetitive tasks to enhance efficiency and reduce errors in the development lifecycle.</li>
+                  <li>Gaining hands-on experience through practical exercises and real-world scenarios.</li>
+                </ul>
+              </section>
+              <section>
+                <h2>Course Highlights:</h2>
+                <ul>
+                  <li>Engaging video lectures by industry experts.</li>
+                  <li>Interactive coding sessions to reinforce learning.</li>
+                  <li>Access to a supportive community for networking and collaboration.</li>
+                  <li>Real-world case studies and project work for practical application of knowledge.</li>
+                  <li>Flexible learning schedule to accommodate your pace.</li>
+                </ul>
+              </section>
+              <section>
+                <h2>Enroll now and kickstart your DevOps journey!</h2>
+                <p>Ready to take the first step towards becoming a proficient DevOps engineer? Join our course today and empower yourself with the skills needed to excel in the ever-evolving world of software development and IT operations.</p>
+                <a href="enroll.html" class="enroll-button">Enroll Now</a>
+              </section></p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+
+        <main role="main" id="css" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RGOj5yH7evk?si=NXQ51a8Dv9En7yru" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">Git and GitHub for Beginners</h2>
+            <p class="lead"><h1>Unlock the Power of Version Control: Git and GitHub for Beginners</h1>
+
+                <p>Welcome to our beginner-friendly guide to Git and GitHub! 🚀</p>
+            
+                <h2>🔍 What You'll Learn:</h2>
+                <ul>
+                    <li>Understanding the basics of version control</li>
+                    <li>Setting up Git on your local machine</li>
+                    <li>Creating your first Git repository</li>
+                    <li>Committing changes and understanding branching</li>
+                    <li>Introduction to GitHub and collaboration</li>
+                    <li>Resolving merge conflicts</li>
+                    <li>Best practices and tips for using Git/GitHub</li>
+                </ul>
+            
+                <h2>🎓 Who Is This For?</h2>
+                <p>This tutorial is perfect for absolute beginners who want to grasp the fundamentals of version control and start using Git and GitHub confidently.</p>
+            
+                <h2>🚀 Let's Dive In!</h2>
+                <p>Whether you're a student, a developer, or just curious about version control, join us on this exciting journey into the world of Git and GitHub. By the end, you'll be equipped with the skills to manage your projects efficiently!</p>
+            
+                <h2>📚 Resources:</h2>
+                <ul>
+                    <li>Download Git: <a href="https://git-scm.com/" target="_blank">https://git-scm.com/</a></li>
+                    <li>Create a GitHub account: <a href="https://github.com/" target="_blank">https://github.com/</a></li>
+                    <li>Additional reading: [Recommended Git/GitHub resources]</li>
+                </ul>
+            
+                <h2>👍 Stay Connected</h2>
+                <p>Connect with us on social media for updates, additional tips, and more!</p></p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+
+
+        <main role="main" id="js" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/PGyhBwLyK2U?si=EZr80zZ49eL7U3bc" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">DevOps with GitLab CI Course - Build Pipelines and Deploy to AWS</h2>
+            <p class="lead"><h1>DevOps with GitLab CI Course - Build Pipelines and Deploy to AWS</h1>
+
+                <p><strong>Course Overview:</strong><br>
+                Welcome to our comprehensive course on <em>DevOps with GitLab CI: Build Pipelines and Deploy to AWS</em>! This course is your ultimate guide to mastering the art of using GitLab's Continuous Integration (CI) services for automating your software deployment processes. Whether you're a beginner in DevOps or looking to enhance your skills, this course is designed to provide you with hands-on knowledge and practical skills.</p>
+                
+                <p><strong>What You Will Learn:</strong><br>
+                <ul>
+                  <li>Understanding the fundamentals of Continuous Integration and Continuous Deployment (CI/CD).</li>
+                  <li>Setting up and configuring GitLab CI.</li>
+                  <li>Creating and managing pipelines for automating build and deployment processes.</li>
+                  <li>Deploying applications to AWS (Amazon Web Services).</li>
+                  <li>Best practices for DevOps and CI/CD with GitLab.</li>
+                  <li>Real-world examples and case studies.</li>
+                </ul>
+                </p>
+                
+                <p><strong>Course Features:</strong><br>
+                <ul>
+                  <li>Interactive video lectures.</li>
+                  <li>Hands-on lab sessions.</li>
+                  <li>Downloadable resources and course materials.</li>
+                  <li>Access to a community forum for discussion and Q&A.</li>
+                  <li>Certificate of completion.</li>
+                </ul>
+                </p>
+                
+                <p><strong>Who is this course for?</strong><br>
+                This course is ideal for software developers, system administrators, IT professionals, and anyone interested in learning DevOps practices with GitLab CI and AWS. Basic understanding of software development and cloud computing concepts will be beneficial.</p>
+                
+                <p><strong>Enroll Now:</strong><br>
+                Ready to dive into the world of DevOps with GitLab CI and AWS? <a href="https://www.yourcourseurl.com">Click here to enroll</a> and start your journey towards becoming a DevOps expert!</p>
+                
+                <p><strong>Stay Connected:</strong><br>
+                Don't forget to subscribe to our channel for more updates, and follow us on our social media platforms:</p></p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+        <main role="main" id="react" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SLB_c_ayRMo?si=W2irzoCfXl0UJawQ" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">Terraform Course - Automate your AWS cloud infrastructure</h2>
+            <p class="lead"><h1>Welcome to the Terraform Course!</h1>
+
+                <p>Learn how to automate your AWS cloud infrastructure with this comprehensive Terraform course. Whether you're a beginner or an experienced cloud engineer, this course will guide you through the essentials of infrastructure as code (IaC) using Terraform.</p>
+            
+                <h2>Course Highlights:</h2>
+                <ul>
+                    <li>Introduction to Terraform and Infrastructure as Code</li>
+                    <li>Setting up your AWS environment</li>
+                    <li>Creating and managing infrastructure with Terraform</li>
+                    <li>Best practices for Terraform scripting</li>
+                    <li>Advanced topics and real-world examples</li>
+                </ul>
+            
+                <h2>Who should take this course?</h2>
+                <p>This course is ideal for:</p>
+                <ul>
+                    <li>Cloud engineers and architects</li>
+                    <li>DevOps professionals</li>
+                    <li>System administrators</li>
+                    <li>Anyone looking to enhance their AWS infrastructure automation skills</li>
+                </ul>
+            
+                <h2>Get started today!</h2>
+                <p>Enroll now and gain the skills to automate your AWS cloud infrastructure efficiently with Terraform. Take control of your infrastructure and streamline your deployment processes.</p>
+            
+                <h2>Course Instructor:</h2>
+                <p>Meet your instructor, [Instructor Name], a seasoned cloud architect with years of experience in building and managing scalable AWS environments.</p>
+            
+                <h2>Don't forget to subscribe for more content!</h2>
+                <p>Subscribe to our channel for more tutorials, tips, and courses on cloud computing, DevOps, and technology trends. Stay ahead in your career with our quality educational content.</p>
+            
+                <p>Happy learning!</p></p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+        <main role="main" id="node" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fqMOX6JJhGo?si=f7VlhRJ00zwTRuod" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">Docker Tutorial for Beginners</h2>
+            <p class="lead"><h1>Docker Tutorial for Beginners</h1>
+
+                <p>Welcome to our Docker tutorial for beginners! In this video, we'll take you through the basics of Docker, a powerful platform for developing, shipping, and running applications in containers.</p>
+            
+                <h2>Topics Covered:</h2>
+            
+                <ul>
+                    <li>Introduction to Docker and containerization</li>
+                    <li>Installation and setup</li>
+                    <li>Creating and managing Docker containers</li>
+                    <li>Working with Docker images</li>
+                    <li>Docker Compose for multi-container applications</li>
+                    <li>Best practices and tips</li>
+                </ul>
+            
+                <p>Whether you're a developer, system administrator, or someone curious about containerization, this tutorial is designed to help you get started with Docker. Follow along with hands-on examples and clear explanations to build your Docker skills.</p>
+            
+                <h2>Prerequisites:</h2>
+            
+                <p>No prior Docker knowledge is required. Familiarity with basic command-line usage will be helpful.</p>
+            
+                <h2>Stay Connected:</h2>
+            
+                <p>For more tutorials and tech content, don't forget to subscribe and hit the notification bell. Connect with us on social media for updates and additional resources.</p>
+            
+                <p>Happy Dockerizing!</p></p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+        <main role="main" id="redux" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/d6WC5n9G_sM?si=T43QDk9u4cbadfI4" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">Kubernetes Tutorial for Beginners</h2>
+            <p class="lead"><h1>Welcome to the Kubernetes Tutorial for Beginners!</h1>
+
+                <p>Are you new to Kubernetes and want to learn the basics? This tutorial is perfect for you! Join us as we dive into the world of container orchestration and explore the fundamental concepts of Kubernetes.</p>
+              
+                <h2>What you'll learn:</h2>
+                <ul>
+                  <li>Introduction to Kubernetes and container orchestration</li>
+                  <li>Setting up your first Kubernetes cluster</li>
+                  <li>Deploying and managing applications with Kubernetes</li>
+                  <li>Scaling and updating applications</li>
+                  <li>Monitoring and troubleshooting in Kubernetes</li>
+                </ul>
+              
+                <h2>Prerequisites:</h2>
+                <p>No prior experience with Kubernetes is required, but a basic understanding of containers and cloud concepts will be helpful.</p>
+              
+                <h2>Resources:</h2>
+                <p>Make sure to check out the following resources:</p>
+                <ul>
+                  <li><a href="link-to-slide-deck">Slide Deck</a></li>
+                  <li><a href="link-to-sample-code">Sample Code</a></li>
+                  <li><a href="link-to-additional-resources">Additional Resources</a></li>
+                </ul>
+              
+                <h2>Subscribe and Stay Tuned!</h2>
+                <p>If you find this tutorial helpful, don't forget to subscribe for more Kubernetes content. Stay tuned for advanced tutorials, tips, and best practices!</p>
+              
+                <p>Happy learning!</p>
+              </p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+
+        <main role="main" id="mern" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zA8guDqfv40?si=ktlmVUUgNI1VPffe" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">AWS Cloud Complete Bootcamp Course</h2>
+            <p class="lead"><h1>Welcome to the AWS Cloud Complete Bootcamp for Beginners!</h1>
+  
+                <p>🚀 Ready to embark on your journey into the world of Amazon Web Services (AWS)? This comprehensive bootcamp is designed for beginners, providing you with the essential skills and knowledge to navigate and harness the power of AWS Cloud services.</p>
+                
+                <h2>Course Highlights:</h2>
+                <ul>
+                  <li>🔧 Hands-on experience with AWS tools and services.</li>
+                  <li>🎓 Beginner-friendly lessons with step-by-step instructions.</li>
+                  <li>💼 Real-world scenarios and practical applications.</li>
+                  <li>📚 In-depth coverage of key AWS concepts and best practices.</li>
+                  <li>👩‍💻 Interactive labs to reinforce your learning.</li>
+                </ul>
+                
+                <h2>What You'll Learn:</h2>
+                <p>🔍 Explore AWS core services, understand cloud computing fundamentals, and gain the skills to build, deploy, and scale applications in the cloud. Whether you're a student, developer, or IT professional, this bootcamp is your gateway to mastering AWS Cloud.</p>
+                
+                <h2>Enroll Now:</h2>
+                <p>👉 Don't miss out on this opportunity to level up your AWS skills. Enroll now and join us on this exciting journey into the cloud!</p>
+                
+                <p>🔗 <a href="[Your Enrollment Link]">Enroll in the AWS Cloud Complete Bootcamp for Beginners</a></p>
+                
+                <h2>Connect with Us:</h2>
+                <p>📱 Follow us on social media for updates, tips, and community support:</p>
+                </p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+
+        <main role="main" id="tailwind" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/F5KJVuii0Yw?si=-mRiWDTJf0_f8RfY" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">DevSecOps Course for Beginners</h2>
+            <p class="lead"> <h1>Unlock the World of DevSecOps: A Beginner's Course</h1>
+
+                <p>🚀 Ready to dive into the exciting world of DevSecOps? This course is perfect for beginners looking to build a strong foundation in the intersection of development, security, and operations.</p>
+            
+                <h2>Course Highlights:</h2>
+            
+                <ul>
+                    <li>🔐 Learn the fundamentals of DevSecOps and its importance in modern software development.</li>
+                    <li>🛠 Hands-on experience with popular tools used in the DevSecOps pipeline.</li>
+                    <li>🤝 Collaboration strategies between development, security, and operations teams.</li>
+                    <li>💻 Real-world scenarios and practical examples to reinforce your learning.</li>
+                    <li>🎓 Expert instructors with years of industry experience.</li>
+                </ul>
+            
+                <h2>Who Should Attend:</h2>
+            
+                <p>This course is designed for beginners, including:</p>
+            
+                <ul>
+                    <li>Developers curious about incorporating security into their workflows.</li>
+                    <li>Security enthusiasts looking to understand the development and operations aspects.</li>
+                    <li>Operations professionals eager to enhance their skills in a DevSecOps environment.</li>
+                </ul>
+            
+                <h2>Enroll Now and Future-proof Your Skills!</h2>
+            
+                <p>Don't miss out on this opportunity to kickstart your DevSecOps journey. Enroll now and gain the knowledge and skills needed to secure and streamline the software development process.</p>
+            
+                <p>🔗 Enroll today: [Your Enrollment Link]</p>
+            
+                <h2>Connect With Us:</h2>
+            
+              
+            </p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+
+        <main role="main" id="typescript" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tK9Oc6AEnR4?si=ky4mzANVcNMpgW1W" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">Bash Scripting Tutorial for Beginners</h2>
+            <p class="lead"><h1>Bash Scripting Tutorial for Beginners</h1>
+    
+                <p>Welcome to our Bash scripting tutorial for beginners! In this video, we'll guide you through the fundamentals of Bash scripting, covering essential concepts and providing hands-on examples to help you get started.</p>
+            
+                <h2>Topics Covered:</h2>
+                <ul>
+                    <li>Introduction to Bash and Shell Scripting</li>
+                    <li>Basic Bash Commands</li>
+                    <li>Variables and Data Types</li>
+                    <li>Conditional Statements</li>
+                    <li>Loops in Bash</li>
+                    <li>Functions and Script Structure</li>
+                </ul>
+            
+                <h2>Why Learn Bash Scripting?</h2>
+                <p>Bash scripting is a powerful skill for anyone working in a Linux environment or interested in automating repetitive tasks. Whether you're a sysadmin, developer, or just curious about programming, this tutorial is designed to make Bash scripting accessible and enjoyable.</p>
+            
+                <h2>Watch the Tutorial Now:</h2>
+                <p>Don't miss out on this opportunity to enhance your scripting skills! Watch the full tutorial now and empower yourself with the knowledge to write efficient Bash scripts.</p>
+            
+              </p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+
+        <main role="main" id="next" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/M1_v5HBVHWo?si=vPds1lbraEiiDOIo" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">CISSP Certification Course</h2>
+            <p class="lead"><h1>CISSP Certification Course - Master Cybersecurity</h1>
+                <p>Welcome to our comprehensive <strong>CISSP Certification Course</strong>, designed for cybersecurity professionals aiming to enhance their skills and knowledge. This video serves as an introduction to our full course, providing insights into what the CISSP certification entails and how our course can help you achieve it.</p>
+                
+                <h2>What You'll Learn:</h2>
+                <ul>
+                    <li><strong>Security and Risk Management:</strong> Understand the principles of confidentiality, integrity, and availability.</li>
+                    <li><strong>Asset Security:</strong> Learn how to protect information and assets in a cybersecurity context.</li>
+                    <li><strong>Security Architecture and Engineering:</strong> Delve into security models, architectures, and design principles.</li>
+                    <li><strong>Communication and Network Security:</strong> Discover how to secure network architecture and design.</li>
+                    <li><strong>Identity and Access Management (IAM):</strong> Learn about controlling access and managing identities.</li>
+                    <li><strong>Security Assessment and Testing:</strong> Understand how to design and conduct security testing.</li>
+                    <li><strong>Security Operations:</strong> Explore incident management, disaster recovery, and business continuity.</li>
+                    <li><strong>Software Development Security:</strong> Understand security in software development and lifecycle management.</li>
+                </ul>
+            
+                <h2>Why Choose Our Course?</h2>
+                <p>This CISSP course is taught by industry experts with years of experience in cybersecurity. It includes:</p></p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+        <main role="main" id="nest" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/X4eRbHgRawI?si=5LzhD4wUMMVns3OZ" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">Penetration Testing Course for Beginners</h2>
+            <p class="lead"><header>
+                <h1>Penetration Testing Course for Beginners</h1>
+              </header>
+            
+              <section>
+                <p>Embark on a thrilling adventure into the realm of cybersecurity with our Penetration Testing Course for Beginners. Whether you're curious about ethical hacking or looking to start a career in cybersecurity, this course is your gateway to mastering the essentials.</p>
+            
+                <p>Key features:</p>
+                <ul>
+                  <li>Hands-on experience with real-world scenarios</li>
+                  <li>Comprehensive coverage of penetration testing tools and techniques</li>
+                  <li>Expert-led sessions with industry professionals</li>
+                  <li>Interactive labs for practical skill development</li>
+                  <li>Community support and networking opportunities</li>
+                </ul>
+            
+                <p>By the end of this course, you'll have a solid foundation in penetration testing, ethical hacking, and cybersecurity principles. Prepare to level up your skills and enhance your understanding of the digital security landscape.</p>
+              </section>
+            
+              <section>
+                <h2>Course Curriculum:</h2>
+                <p>Our carefully crafted curriculum covers:</p>
+                <ul>
+                  <li>Introduction to Ethical Hacking</li>
+                  <li>Networking Fundamentals</li>
+                  <li>Common Security Threats</li>
+                  <li>Penetration Testing Methodology</li>
+                  <li>Web Application Security</li>
+                  <li>Wireless Network Security</li>
+                  <!-- Add more sections as needed -->
+                </ul>
+              </section>
+            
+              <section>
+                <h2>Enroll Now!</h2>
+                <p>Don't miss out on this opportunity to kickstart your journey into the exciting world of cybersecurity. Enroll now and gain the skills needed to become a proficient penetration tester. Join our community of learners committed to securing the digital landscape.</p>
+            
+                <a href="enroll.html" class="enroll-button">Enroll Now</a> <!-- Replace with your actual enrollment link -->
+              </section></p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+
+    </div>
+</div>
+
+
+  
+  
+  
+  <!-----/////////////////////////////////////////////////////////////////////////////////---->
+  <section id="courses" class="container mt-5">
+    <h2>Our Courses</h2>
+    <div class="card-deck" id="courseContainer">
+        <!-- Courses will be dynamically added here using JavaScript -->
+    </div>
+</section>
+  
+  <!-- CTA Section -->
+<section id="cta" class="container mt-5 text-center">
+    <h2>Ready to Start Learning?</h2>
+    <p>Join our courses and enhance your skills today!</p>
+    <a href="#contact" class="btn btn-primary">Enroll Now</a>
+</section>
+  
+  
+  <!-- ... (previous code) ... -->
+<!-- ... (previous code) ... -->
+
+<!-- Featured Courses Section -->
+<section id="featured-courses" class="container mt-5">
+    <h2>Featured Courses</h2>
+    <div class="card-deck">
+        <div class="card">
+            <img src="images/picture/mernfet.png" class="card-img-top" alt="Featured Course 1">
+            <div class="card-body">
+                <h5 class="card-title">MERN Blog</h5>
+                <p class="card-text">Explore advanced topics and gain hands-on experience.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/picture/devops-feature.png" class="card-img-top" alt="Featured Course 2">
+            <div class="card-body">
+                <h5 class="card-title">Devops Blog</h5>
+                <p class="card-text">Master the latest industry tools and techniques.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/picture/python-developerfet.png" class="card-img-top" alt="Featured Course 3">
+            <div class="card-body">
+                <h5 class="card-title">Python Blog</h5>
+                <p class="card-text">Build a strong foundation with fundamental concepts.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ... (remaining code) ... -->
+
+  
+  
+  
+<!-- Features Section -->
+<section id="features" class="container mt-5">
+    <h2>Key Features</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <h4>Expert Instructors</h4>
+            <p>Learn from industry experts with real-world experience.</p>
+        </div>
+        <div class="col-md-4">
+            <h4>Interactive Learning</h4>
+            <p>Engage in hands-on activities and quizzes for effective learning.</p>
+        </div>
+        <div class="col-md-4">
+            <h4>Flexible Schedule</h4>
+            <p>Access course materials at your own pace, anytime, anywhere.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Closing Section -->
+<section id="closing" class="container mt-5 text-center">
+    <p>Thank you for exploring our course offerings. Ready to start your learning journey? Enroll in a course today!</p>
+    <a href="#contact" class="btn btn-primary">Get Started</a>
+</section>
+
+
+
+
+<!-- Testimonials Section (Updated) -->
+<section id="testimonials" class="container mt-5">
+    <h2>What Our Students Say</h2>
+    <div id="carouselTestimonials" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0">"Great courses! I learned a lot and enjoyed the interactive lessons."</p>
+                    <footer class="blockquote-footer">John Doe</footer>
+                </blockquote>
+            </div>
+            <!-- Add more testimonials as needed -->
+        </div>
+        <a class="carousel-control-prev" href="#carouselTestimonials" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselTestimonials" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</section>
+
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="container mt-5">
+    <h2>Student Testimonials</h2>
+    <div id="carouselTestimonials" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0">"Great courses! I learned a lot and enjoyed the interactive lessons."</p>
+                    <footer class="blockquote-footer">John Doe</footer>
+                </blockquote>
+            </div>
+            <!-- Add more testimonials as needed -->
+        </div>
+        <a class="carousel-control-prev" href="#carouselTestimonials" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselTestimonials" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</section>
+  
+  
+  
+  <!-- ... (previous code) ... -->
+
+<!-- FAQ Section -->
+<section id="faq" class="container mt-5">
+    <h2>Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAccordion">
+        <!-- FAQ items will be dynamically added here using JavaScript -->
+    </div>
+</section>
+
+<!-- JavaScript (FAQ Section) -->
+<script>
+    // Sample FAQ data (replace with your actual data)
+    var faqs = [
+        { question: 'How do I enroll in a course?', answer: 'You can enroll in a course by clicking the "Enroll Now" button and filling out the enrollment form.' },
+        { question: 'Is there a money-back guarantee?', answer: 'Yes, we offer a 30-day money-back guarantee if you are not satisfied with the course.' },
+        { question: 'Are certificates provided upon completion?', answer: 'Yes, a certificate of completion is provided for each course.' },
+        // Add more FAQs as needed
+    ];
+
+    // Dynamically generate FAQ items
+    $(document).ready(function () {
+        var faqAccordion = $('#faqAccordion');
+
+        faqs.forEach(function (faq, index) {
+            var faqItem = `
+                <div class="card">
+                    <div class="card-header" id="faqHeading${index}">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#faqCollapse${index}" aria-expanded="true" aria-controls="faqCollapse${index}">
+                                ${faq.question}
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="faqCollapse${index}" class="collapse" aria-labelledby="faqHeading${index}" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            ${faq.answer}
+                        </div>
+                    </div>
+                </div>
+            `;
+            faqAccordion.append(faqItem);
+        });
+    });
+</script>
+
+<!-- ... (remaining code) ... -->
+
+
+
+
+<!-- ... (remaining code) ... -->
+
+
+<!-- Contact Section -->
+
+    <!-- Add your contact form or details here -->
+  <!-- ... (previous code) ... -->
+
+<!-- Contact Section -->
+<section id="contact" class="container mt-5">
+    <h2>Contact Us</h2>
+    <p>Have questions? Reach out to us!</p>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="name">Your Name</label>
+                <input type="text" class="form-control" id="name" placeholder="John Doe">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email">Your Email</label>
+                <input type="email" class="form-control" id="email" placeholder="john.doe@example.com">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea class="form-control" id="message" rows="4" placeholder="Write your message here..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+</section>
+
+<!-- ... (remaining code) ... -->
+
+
+  
+  <!-- ... (previous code) ... -->
+
+<!-- Social Media Section -->
+<section id="social" class="container mt-5">
+    <h2>Connect with Us</h2>
+    <div class="social-icons">
+        <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+</section>
+
+
+
+  
+  <!-- Footer Section -->
+  <footer class="footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="footer-p">
+                    <p>Millions of people of all ages and from around
+                        the world are improving their lives with us</p>
+                </div>
+            </div>
+            <div class="col-md-7 ml-auto">
+                <div class="footer-inner d-flex justify-content-between">
+                    <div class="footer-list-item">
+                        <ul class="list-unstyled">
+                            <li>Course</li>
+                            <li><a href="#">Graphic Design</a></li>
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Marketing</a></li>
+                            <li><a href="#">Engineering</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-list-item">
+                        <ul class="list-unstyled">
+                            <li>Terms</li>
+                            <li><a href="#">Graphic Design</a></li>
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Marketing</a></li>
+                            <li><a href="#">Engineering</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-list-item">
+                        <ul class="list-unstyled">
+                            <li>Useful Links</li>
+                            <li><a href="#">Graphic Design</a></li>
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Marketing</a></li>
+                            <li><a href="#">Engineering</a></li>
+                        </ul>
+                    </div>  
+                </div>                                      
+            </div>
+        </div>
+        <div class="copyright text-center">
+            <small>Copyright © 2024 Code Gurukul </small>
+        </div>
+    </div>
+</footer>
+<script>
+    function toggleDropdown(section) {
+        var content = document.getElementById(section);
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    }
+    </script>
+
+
+  <!-- ... (previous code) ... -->
+
+<!-- JavaScript -->
+    
+  <!-- ... (previous code) ... -->
+  
+
+<script>
+    // JavaScript to handle video switching in the iframe
+    $(document).ready(function () {
+        $('.nav-link').on('click', function (e) {
+            e.preventDefault();
+            var videoSrc = $(this).attr('href');
+            $('#videoPlayer').attr('src', videoSrc);
+        });
+    });
+</script>
+
+
+<!-- Testimonials Section (Updated JavaScript) -->
+
+
+
+
+
+
+<script>
+    // Sample testimonial data (replace with your actual data)
+    var testimonials = [
+        { quote: 'Great courses! I learned a lot and enjoyed the interactive lessons.', author: 'Soni Rai' },
+        { quote: 'Excellent content! The instructors are knowledgeable and engaging.', author: 'Rani Singh' },
+        // Add more testimonials as needed
+    ];
+
+    // Dynamically generate testimonials
+    $(document).ready(function () {
+        var testimonialContainer = $('.carousel-inner');
+
+        testimonials.forEach(function (testimonial, index) {
+            var activeClass = index === 0 ? 'active' : '';
+            var testimonialItem = `
+                <div class="carousel-item ${activeClass}">
+                    <blockquote class="blockquote text-center">
+                        <p class="mb-0">"${testimonial.quote}"</p>
+                        <footer class="blockquote-footer">${testimonial.author}</footer>
+                    </blockquote>
+                </div>
+            `;
+            testimonialContainer.append(testimonialItem);
+        });
+    });
+</script>
+
+<!-- ... (remaining code) ... -->
+
+<script>
+    // Smooth scrolling for anchor links
+    $(document).ready(function () {
+        $("a").on('click', function (event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+
+                var hash = this.hash;
+
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+                    window.location.hash = hash;
+                });
+            }
+        });
+    });
+
+    
+</script>
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<!-- JavaScript -->
+<script>
+    // Sample course data (replace with your actual data)
+    var courses = [
+        { title: 'DevOps in One video', description: 'DevOps, short for Development and Operations, is a collaborative approach that integrates software development and IT operations. This methodology aims to streamline the software delivery process, from coding and testing to deployment and monitoring. DevOps emphasizes automation, continuous integration, and continuous delivery to enhance efficiency, reduce errors, and accelerate the release of high-quality software. By fostering collaboration between development and operations teams, DevOps enables organizations to adapt quickly to changing requirements and deliver value to customers faster.', videoUrl: 'https://www.youtube.com/embed/j5Zsa_eOXeY?si=Q0vviPRUIiQebJsQ' },
+        { title: 'Python in One video', description: 'A Python one-minute video could highlight Python as a versatile and readable programming language. It could touch on its simplicity, emphasizing clean syntax and easy readability, making it an excellent choice for beginners and professionals alike. Mentioning its wide range of applications—from web development and data science to artificial intelligence—would showcase its versatility. Additionally, showcasing Python active community and vast library support would highlight its strength as a collaborative and robust language. In essence, the video aims to convey Python as an accessible, powerful, and community-driven language suitable for various domains.', videoUrl: 'https://www.youtube.com/embed/H2EJuAcrZYU?si=CQUbXjhmWWKx-mw9' },
+        // Add more courses as needed
+    ];
+
+    // Dynamically generate course cards and set video modal content
+    $(document).ready(function () {
+        var courseContainer = $('#courseContainer');
+        var courseVideoModal = $('#videoModal');
+        var courseVideo = $('#courseVideo');
+
+        courses.forEach(function (course, index) {
+            var card = `
+                <div class="card">
+                    <img src="https://media.licdn.com/dms/image/D4D12AQF4XvoJTyOh_A/article-cover_image-shrink_720_1280/0/1699551909901?e=2147483647&v=beta&t=7GUz7bYODo5GFjx-0jt_kdKMxZpj3lZLdY0kiNtWKC8" class="card-img-top" alt="${course.title} Image">
+                    <div class="card-body">
+                        <h5 class="card-title">${course.title}</h5>
+                        <p class="card-text">${course.description}</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#videoModal" data-video="${course.videoUrl}">
+                            Watch Video
+                        </button>
+                    </div>
+                </div>
+            `;
+            courseContainer.append(card);
+        });
+
+        // Update video modal content dynamically
+        $('#videoModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var videoUrl = button.data('video');
+            courseVideo.attr('src', videoUrl);
+        });
+
+        // Close video modal and stop video when modal is closed
+        $('#videoModal').on('hidden.bs.modal', function () {
+            courseVideo.attr('src', '');
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+<!-- ... (remaining code) ... -->
+<script>
+    // Sample FAQ data (replace with your actual data)
+    var faqs = [
+        { question: 'How do I enroll in a course?', answer: 'You can enroll in a course by clicking the "Enroll Now" button and filling out the enrollment form.' },
+        { question: 'Is there a money-back guarantee?', answer: 'Yes, we offer a 30-day money-back guarantee if you are not satisfied with the course.' },
+        { question: 'Are certificates provided upon completion?', answer: 'Yes, a certificate of completion is provided for each course.' },
+        // Add more FAQs as needed
+    ];
+
+    // Dynamically generate FAQ items
+    $(document).ready(function () {
+        var faqAccordion = $('#faqAccordion');
+
+        faqs.forEach(function (faq, index) {
+            var faqItem = `
+                <div class="card">
+                    <div class="card-header" id="faqHeading${index}">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#faqCollapse${index}" aria-expanded="true" aria-controls="faqCollapse${index}">
+                                ${faq.question}
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="faqCollapse${index}" class="collapse" aria-labelledby="faqHeading${index}" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            ${faq.answer}
+                        </div>
+                    </div>
+                </div>
+            `;
+            faqAccordion.append(faqItem);
+        });
+    });
+</script>
+
+
+</body>
+</html>

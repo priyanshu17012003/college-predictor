@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Gurukul - Python Developer</title>
+    <link rel="icon" type="images/png" href="images/logo1-removebg-preview.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* Add your custom styles here */
+        .dropdown-content {
+            display: none;
+            list-style-type: none;
+        }
+
+        body {
+        background-color: beige;
+      }
+      .navbar {
+        background: linear-gradient(to right, #ff8c00, #ff4500);
+      }
+      .nav-link {
+        text-decoration: none;
+        color: black;
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+
+      .active-color {
+        color: white;
+        font-size: 1.6rem;
+      }
+      .navbar-brand {
+        text-decoration: none;
+        color: black;
+        font-size: 1.6rem;
+        font-weight: 700;
+      }
+      .nav-item {
+        transition: background 0.2s ease;
+      }
+      .nav-item:hover {
+        border-radius: 1.5rem;
+      }
+      .active {
+        background-color: white;
+        border-radius: 1.2rem;
+        font-size: 1.6rem;
+      }
+      .btn {
+        background-color: #ff8c00;
+      }
+      .btn:hover {
+        background: linear-gradient(to right, #ff8c00, #ff4500);
+        color: black;
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+
+    
+
+    section {
+        padding: 40px 0;
+    }
+      
+      section#social {
+        text-align: center;
+    }
+
+    .social-icons a {
+        display: inline-block;
+        margin: 0 10px;
+        font-size: 24px;
+        color: #007bff; /* Change to your preferred color */
+    }
+
+    iframe{
+       border-radius: 10px;
+       
+
+    }
+
+    .sidebar{
+        
+        border-radius: 10px;
+        
+        padding-top: 20px;
+    
+    }
+
+    footer {
+        
+        bottom: 0;
+        width: 100%;
+
+    }
+
+    
+    </style> 
+</head>
+<body>
+    <!--
+    ===================
+        NAVIGATION
+    ===================
+    -->
+    <nav class="navbar navbar-expand-sm mb-3">
+        <div class="container">
+          <a href="{{url_for('index')}}" class="navbar-brand"
+            >College Predictor</a
+          >
+          <button
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#Nav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="Nav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a href="{{url_for('index')}}" class="nav-link">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url_for('colleges')}}" class="nav-link">COLLEGES</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url_for('about')}}" class="nav-link">DETAILS</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url_for('exam')}}" class="nav-link" id="about-link"
+                  >EXAM</a
+                >
+              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="{{url_for('courses')}}">Course</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  
+    <!-- Custom CSS -->
+    
+
+
+<!-- Home Section -->
+<section id="home" class="container mt-5">
+    <h1>Welcome to Our Course Website</h1>
+    <p>Learn and grow with our expertly crafted courses.</p>
+</section>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <h5 class="my-4">Lecture</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#html">
+                            L1-:Python Course with mini project
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#css">
+                            L2-:Intermediate Python Course
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#js">
+                            L3-:12 Beginner Python Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#react">
+                            L4-:20 Beginner Python Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#node">
+                            L5-:Six Quick Python Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#redux">
+                            L6-:Flask Course
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mern">
+                            L7-:Django Coures
+                        </a>
+                    </li>
+                    
+                    <!-- Add more lectures as needed -->
+                </ul>
+            </div>
+        </nav>
+        
+                <!-- Main Content -->
+                <main role="main" id="html" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qwAFL1597eM?si=OH2L3OacFZ3I91Yu" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">Python Tutorial for Beginners (with mini-projects) </h2>
+            <p class="lead"> <header>
+                <h1>Python Tutorial for Beginners</h1>
+              </header>
+            
+              <section>
+                <p>Welcome to the ultimate Python tutorial for beginners! Whether you're new to programming or looking to expand your skills, this series is designed just for you.</p>
+            
+                <h2>What You'll Learn:</h2>
+                <ul>
+                  <li>Python basics and syntax</li>
+                  <li>Control flow and loops</li>
+                  <li>Functions and modules</li>
+                  <li>Handling exceptions</li>
+                  <li>Introduction to mini-projects</li>
+                </ul>
+            
+                <h2>Why Watch?</h2>
+                <p>Our step-by-step approach ensures a smooth learning experience. Dive into practical examples and mini-projects that reinforce your understanding of each concept.</p>
+            
+                <h2>Mini-Projects Included:</h2>
+                <ol>
+                  <li>Interactive Calculator</li>
+                  <li>Task Scheduler</li>
+                  <li>Text-based Adventure Game</li>
+                  <!-- Add more mini-projects as applicable -->
+                </ol>
+            
+                <h2>Subscribe and Code Along!</h2>
+                <p>Don't miss out on the fun! Hit subscribe to join our coding community and embark on an exciting Python programming journey.</p>
+            
+                <h2>Stay Connected:</h2></p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+
+        <main role="main" id="css" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HGOBQPFzWKo?si=qZki_VwnO6kfuHC5" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">Intermediate Python Programming Course</h2>
+            <p class="lead"><h2>Course Overview</h2>
+                <p>Join us in this comprehensive intermediate Python programming course where you'll take your Python skills to the next level. Whether you're a beginner looking to deepen your understanding or an experienced developer aiming to enhance your proficiency, this course is tailored for you.</p>
+        
+                <h2>What You'll Learn</h2>
+                <ul>
+                    <li>Advanced Python syntax and concepts</li>
+                    <li>Object-oriented programming in Python</li>
+                    <li>Working with external libraries and modules</li>
+                    <li>Error handling and debugging techniques</li>
+                    <li>Building scalable and efficient Python applications</li>
+                </ul>
+        
+                <h2>Why Take This Course</h2>
+                <p>Our expert instructors will guide you through hands-on projects and real-world applications, ensuring you gain practical experience alongside theoretical knowledge. By the end of the course, you'll be equipped with the skills to tackle complex Python projects and contribute effectively to the world of software development.</p>
+        
+                <h2>Enroll Now</h2>
+                <p>Don't miss this opportunity to advance your Python programming skills. Enroll now and embark on a journey of growth and mastery in the world of Python development.</p></p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+
+
+        <main role="main" id="js" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8ext9G7xspg?si=dWlq0RmwFBOjgxQ4" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">12 Beginner Python Projects - Coding Course</h2>
+            <p class="lead"><h3><h1>🌟 Python Project Course - Learn & Build with Fun! 🌟</h1>
+                <p>Join us in this exciting Python journey where we build 12 unique projects! From simple games to advanced algorithms, enhance your Python skills in a fun and engaging way. Perfect for beginners and intermediate learners! 🚀</p>
+                
+                <h2>📚 Course Contents 📚</h2>
+                <ul>
+                    <li><strong>(1:40)</strong> <span>1. Madlibs</span>: Dive into Python programming by creating a simple and fun Madlibs game. Learn string manipulation and user input handling.</li>
+                    <li><strong>(6:54)</strong> <span>2. Guess the Number (computer)</span>: Understand computer's guessing logic in this interactive number guessing game.</li>
+                    <li><strong>(13:17)</strong> <span>3. Guess the Number (user)</span>: Flip the script! Now you try to guess the number. Learn about loops and conditional statements.</li>
+                    <li><strong>(21:14)</strong> <span>4. Rock Paper Scissors</span>: Build the classic game and learn about fundamental Python concepts like functions and randomness.</li>
+                    <li><strong>(24:25)</strong> <span>5. Hangman</span>: Develop the popular Hangman game. Focus on string manipulation, data structures, and error handling.</li>
+                    <li><strong>(35:53)</strong> <span>6. Tic-Tac-Toe</span>: Create the timeless Tic-Tac-Toe game. Learn about game logic and 2D arrays.</li>
+                    <li><strong>(59:59)</strong> <span>7. Tic-Tac-Toe AI</span>: Enhance the Tic-Tac-Toe game with AI. Dive into basic artificial intelligence concepts for games.</li>
+                    <li><strong>(1:15:53)</strong> <span>8. Binary Search</span>: Implement the efficient binary search algorithm. Understand algorithmic thinking and recursion.</li>
+                    <li><strong>(1:27:16)</strong> <span>9. Minesweeper</span>: Build the classic Minesweeper game. Learn about grid-based logic and advanced Python constructs.</li>
+                    <li><strong>(1:51:55)</strong> <span>10. Sudoku Solver</span>: Solve Sudoku puzzles programmatically. Focus on algorithm design and backtracking.</li>
+                    <li><strong>(2:05:34)</strong> <span>11. Photo Manipulation in Python</span>: Enter the world of digital images. Work with libraries to manipulate photos.</li>
+                    <li><strong>(2:31:49)</strong> <span>12. Markov Chain Text Composer</span>: Create a text composer using Markov Chains. Explore probabilistic models and natural language processing basics.</li>
+                </ul>
+            
+                <p>👨‍💻 Whether you're a beginner or looking to sharpen your Python skills, this course has something for everyone. Start coding and turn these ideas into reality! 💡</p></p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+        <main role="main" id="react" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pdy3nh1tn6I?si=A9lMBVMZtYRO0EnA" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">20 Beginner Python Projects - Complete Course</h2>
+            <p class="lead">
+                <p>Embark on your Python programming journey with our comprehensive course designed for beginners! This course covers 20 exciting projects that will help you grasp the fundamentals of Python while working on real-world applications. Whether you're new to programming or looking to brush up on your skills, this course is tailored to provide a hands-on learning experience.</p>
+            
+                <h2>Course Contents:</h2>
+                <ul>
+                    <li><strong>(0:00:00)</strong> Introduction</li>
+                    <li><strong>(0:00:41)</strong> Email Sender - Learn how to automate email sending using Python.</li>
+                    <li><strong>(0:12:15)</strong> Word Replacement Program - A simple text manipulation tool.</li>
+                    <li><strong>(0:14:35)</strong> Basic Calculator - Create a calculator for basic arithmetic operations.</li>
+                    <li><strong>(0:28:21)</strong> Email Slicer - Extract domains and usernames from email addresses.</li>
+                    <li><strong>(0:35:20)</strong> Binary Search Algorithm - Implement this efficient searching technique.</li>
+                    <li><strong>(0:53:48)</strong> Quiz Program - Build an interactive quiz application.</li>
+                    <li><strong>(1:07:04)</strong> QR Code Generator - Generate QR codes for URLs or text.</li>
+                    <li><strong>(1:13:58)</strong> Interest Payment Calculator - Calculate interest payments for loans.</li>
+                    <li><strong>(1:21:51)</strong> Random Password Generator - Create secure and random passwords.</li>
+                    <li><strong>(1:31:41)</strong> Dice Rolling Simulator - Simulate dice rolls in Python.</li>
+                    <li><strong>(1:38:47)</strong> Site Connectivity Checker - Check the online status of websites.</li>
+                    <li><strong>(1:47:29)</strong> Currency Converter - Convert currencies using real-time exchange rates.</li>
+                    <li><strong>(1:51:53)</strong> Leap Year Checker - Determine if a year is a leap year.</li>
+                    <li><strong>(1:55:53)</strong> Word Dictionary - Create a program to find meanings of words.</li>
+                    <li><strong>(2:07:41)</strong> Rock, Paper, Scissors - Program the classic game in Python.</li>
+                    <li><strong>(2:19:39)</strong> Python Face Detection - Implement basic face detection with Python.</li>
+                    <li><strong>(2:27:14)</strong> Python Automation - Automate daily tasks using Python scripts.</li>
+                    <li><strong>(2:39:02)</strong> Web Scraper - Extract data from web pages.</li>
+                    <li><strong>(2:47:28)</strong> Image Resizer - Learn how to resize images with Python.</li>
+                    <li><strong>(2:57:34)</strong> Graph Plotter - Create visual representations of data.</li>
+                </ul>
+            
+                <p>This course is perfect for anyone looking to learn Python programming through practical projects. By the end of this course, you will have a solid understanding of Python basics and the confidence to build your own applications.</p>
+            
+                <p><strong>Happy Coding!</strong></p></p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+        <main role="main" id="node" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SqvVm3QiQVk?si=1SW6LUYUqHdR6_i5" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">Six Quick Python Projects</h2>
+            <p class="lead"> <h1>Six Quick Python Projects Course</h1>
+                <p>Welcome to our <strong>Six Quick Python Projects Course</strong>! This course is perfect for Python beginners and those looking to enhance their programming skills with practical projects. Jump into these easy-to-follow tutorials and start building your Python project portfolio today!</p>
+            
+                <h2>🌟 Course Contents 🌟</h2>
+                <ul>
+                    <li><strong>(00:00)</strong> Intro</li>
+                    <li><strong>(00:37)</strong> Web Scraping Program: Learn how to extract data from websites.</li>
+                    <li><strong>(13:53)</strong> Renaming Bulk Files: Automate the process of bulk file renaming.</li>
+                    <li><strong>(24:54)</strong> Getting Weather Information: Fetch and display weather data from an API.</li>
+                    <li><strong>(33:12)</strong> Countdown Timer: Create a simple and efficient countdown timer.</li>
+                    <li><strong>(42:11)</strong> Password Generator: Generate strong and secure passwords.</li>
+                    <li><strong>(53:12)</strong> QR Code With Python: Learn how to create QR codes for various applications.</li>
+                </ul>
+            
+                <h3>Why This Course?</h3>
+                <p>This course is designed to provide hands-on experience with Python, one of the most popular programming languages. Each project is short, sweet, and to the point, making learning both fun and efficient. By the end of this course, you'll have a better understanding of Python and practical skills you can apply immediately.</p>
+            
+                <h3>Connect With Us</h3>
+                <p>Have questions or want to share your progress? Connect with us on our social media platforms and join our community of budding Python developers!</p></p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+        <main role="main" id="redux" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Qr4QMBUPxWo?si=h_cZoQP1pgwzN6RV" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">Flask Course - Python Web Application Development</h2>
+            <p class="lead"><h1>Flask Course - Python Web Application Development</h1>
+                <p>Join us in this comprehensive course for mastering Flask, the popular Python web framework. Whether you're a beginner or looking to enhance your Flask skills, this course is designed to take you through everything from the basics to advanced features of Flask.</p>
+                
+                <h2>⭐️ Course Contents ⭐️</h2>
+                <ul>
+                    <li><strong>P1 (0:00:00):</strong> Introduction</li>
+                    <li><strong>P2 (0:20:37):</strong> Styling & Templates</li>
+                    <li><strong>P3 (0:41:37):</strong> Sending data to Templates</li>
+                    <li><strong>P4 (1:02:56):</strong> Template Inheritance</li>
+                    <li><strong>P5 (1:21:14):</strong> Models and Databases</li>
+                    <li><strong>P6 (1:51:13):</strong> Project Restructure</li>
+                    <li><strong>P7 (2:05:41):</strong> Model Relationships</li>
+                    <li><strong>P8 (2:25:37):</strong> Flask Forms</li>
+                    <li><strong>P9 (2:51:58):</strong> Flask Validations</li>
+                    <li><strong>P10 (3:14:05):</strong> Flashes & Advanced Validations</li>
+                    <li><strong>P11 (3:41:04):</strong> User Authentication Part 1</li>
+                    <li><strong>P12 (3:59:56):</strong> User Authentication Part 2</li>
+                    <li><strong>P13 (4:34:16):</strong> Logout and Customizations</li>
+                    <li><strong>P14 (4:51:25):</strong> Item Purchasing Part 1</li>
+                    <li><strong>P15 (5:18:39):</strong> Item Purchasing Part 2</li>
+                    <li><strong>P16 (5:54:13):</strong> Item Selling</li>
+                </ul>
+            
+                <p>Each section is meticulously crafted to ensure a comprehensive understanding of each aspect of Flask development. From setting up your development environment to deploying your applications, this course covers it all. Happy coding!</p></p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+
+        <main role="main" id="mern" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="embed-responsive embed-responsive-16by9 my-4">
+                <!-- Replace the video URL below with your actual video URL -->
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jBzwzrDvZ18?si=ceMQuDEzuMIx0kf7" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="my-4">Python Backend Web Development Course (with Django)</h2>
+            <p class="lead"><h1>Python Backend Web Development Course (with Django)</h1>
+                <p>Embark on a comprehensive journey through Python and Django to master backend web development. This course is tailored for both beginners and intermediate developers who seek to deepen their understanding and skills in Python and Django. Each module is meticulously crafted to guide you through from the basics to more advanced concepts.</p>
+            
+                <h2>📚 Course Contents 📚</h2>
+                <ul>
+                    <li><strong>⌨️ (0:00:00)</strong> Intro</li>
+                    <li><strong>⌨️ (0:01:58)</strong> Introduction To Python</li>
+                    <li><strong>⌨️ (0:02:39)</strong> Installation Of Python</li>
+                    <li><strong>⌨️ (0:06:30)</strong> Hello World In Python</li>
+                    <li><strong>⌨️ (0:11:36)</strong> Variables In Python</li>
+                    <li><strong>⌨️ (0:17:10)</strong> Strings In Python</li>
+                    <li><strong>⌨️ (0:26:37)</strong> Numbers In Python</li>
+                    <li><strong>⌨️ (0:37:19)</strong> Getting A User's Input</li>
+                    <li><strong>⌨️ (0:42:34)</strong> Word Replacement Exercise</li>
+                    <li><strong>⌨️ (0:47:08)</strong> List In Python</li>
+                    <li><strong>⌨️ (1:03:05)</strong> List Methods</li>
+                    <li><strong>⌨️ (1:16:28)</strong> Tuples In Python</li>
+                    <li><strong>⌨️ (1:22:33)</strong> Functions In Python</li>
+                    <li><strong>⌨️ (1:35:06)</strong> The Return Keyword</li>
+                    <li><strong>⌨️ (1:40:45)</strong> IF Statements In Python</li>
+                    <li><strong>⌨️ (2:03:21)</strong> Building An Even Number Checker Program</li>
+                    <li><strong>⌨️ (2:05:05)</strong> Dictionaries In Python</li>
+                    <li><strong>⌨️ (2:13:40)</strong> While Loops In Python</li>
+                    <li><strong>⌨️ (2:19:47)</strong> For Loops In Python</li>
+                    <li><strong>⌨️ (2:29:37)</strong> 2D Lists</li>
+                    <li><strong>⌨️ (2:34:12)</strong> Comments In Python</li>
+                    <li><strong>⌨️ (2:37:38)</strong> Building A Basic Calculator</li>
+                    <li><strong>⌨️ (2:45:35)</strong> Try Except In Python</li>
+                    <li><strong>⌨️ (2:53:28)</strong> Reading Files</li>
+                    <li><strong>⌨️ (3:03:36)</strong> Writing Files</li>
+                    <li><strong>⌨️ (3:09:17)</strong> Classes and Objects In Python</li>
+                    <li><strong>⌨️ (3:16:43)</strong> Inheritance In Python</li>
+                    <li><strong>⌨️ (3:19:31)</strong> The Python Shell</li>
+                    <li><strong>⌨️ (3:25:17)</strong> Building A Simple Login and SignUp System</li>
+                    <li><strong>⌨️ (3:31:04)</strong> Modules and PIP In Python</li>
+                    <li><strong>⌨️ (3:38:28)</strong> Introduction To Django</li>
+                    <li><strong>⌨️ (3:39:32)</strong> Installation Of Django</li>
+                    <li><strong>⌨️ (3:59:49)</strong> Url Routing And Django Apps</li>
+                    <li><strong>⌨️ (4:14:21)</strong> Django Template Language</li>
+                    <li><strong>⌨️ (4:20:55)</strong> Sending Data To Template File</li>
+                    <li><strong>⌨️ (4:28:12)</strong> Building A Word Counter In Django</li>
+                    <li><strong>⌨️ (4:43:13)</strong> Get vs Post In Django</li>
+                    <li><strong>⌨️ (4:49:21)</strong> Static Files In Django</li>
+                    <li><strong>⌨️ (5:04:29)</strong> Introduction To Django Models</li>
+                    <li><strong>⌨️ (5:29:02)</strong> Django Admin Panel & Manipulation Of Database</li>
+                    <li><strong>⌨️ (5:46:38)</strong> User Registration In Django</li>
+                    <li><strong>⌨️ (6:08:46)</strong> User Login And Logout In Django</li>
+                    <li><strong>⌨️ (6:26:43)</strong> Dynamic Url Routing In Django</li>
+                    <li><strong>⌨️ (6:37:24)</strong> Postgresql Setup</li>
+                    <li><strong>⌨️ (6:47:23)</strong> Building A Blog With Django - Part 1</li>
+                    <li><strong>⌨️ (7:12:10)</strong> Building A Blog With Django - Part 2</li>
+                    <li><strong>⌨️ (7:25:48)</strong> Building A Weather App With Django - Part 1</li>
+                    <li><strong>⌨️ (7:45:17)</strong> Building A Weather App With Django - Part 2</li>
+                    <li><strong>⌨️ (8:03:06)</strong> Building A Realtime Chat Application With Django - Part 1</li>
+                    <li><strong>⌨️ (8:50:11)</strong> Building A Realtime Chat Application With Django - Part 2</li>
+                    <li><strong>⌨️ (9:07:59)</strong> Django Rest Framework Crash Course</li>
+                </ul>
+                
+            
+                <h2>What You Will Learn:</h2>
+                <ul>
+                    <li>Basics of Python programming</li>
+                    <li>Understanding of Django framework for backend development</li>
+                    <li>Building real-world applications and APIs with Django</li>
+                    <li>Database management with Postgresql</li>
+                    <li>Creating dynamic web applications and services</li>
+                </ul>
+            
+                <h2>Requirements:</h2>
+                <p>No prior knowledge of Django is required, but basic understanding of Python is beneficial.</p>
+            
+                <h2>Instructor:</h2>
+                <p>[Instructor's Name], a seasoned developer and instructor with [X] years of experience in Python and Django.</p>
+            
+                <h2>Enroll Now:</h2>
+                <p>Become an expert in Python and Django and build powerful web applications and services. <a href="[Course Enrollment Link]">Click here to enroll!</a></p></p>
+
+            <!-- Additional content can be added here -->
+
+        </main>
+
+        
+    </div>
+</div>
+
+
+  
+  
+  
+  <!-----/////////////////////////////////////////////////////////////////////////////////---->
+  <section id="courses" class="container mt-5">
+    <h2>Our Courses</h2>
+    <div class="card-deck" id="courseContainer">
+        <!-- Courses will be dynamically added here using JavaScript -->
+    </div>
+</section>
+  
+  <!-- CTA Section -->
+<section id="cta" class="container mt-5 text-center">
+    <h2>Ready to Start Learning?</h2>
+    <p>Join our courses and enhance your skills today!</p>
+    <a href="#contact" class="btn btn-primary">Enroll Now</a>
+</section>
+  
+  
+  <!-- ... (previous code) ... -->
+<!-- ... (previous code) ... -->
+
+<!-- Featured Courses Section -->
+<section id="featured-courses" class="container mt-5">
+    <h2>Featured Courses</h2>
+    <div class="card-deck">
+        <div class="card">
+            <img src="images/picture/mernfet.png" class="card-img-top" alt="Featured Course 1">
+            <div class="card-body">
+                <h5 class="card-title">MERN Blog</h5>
+                <p class="card-text">Explore advanced topics and gain hands-on experience.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/picture/devops-feature.png" class="card-img-top" alt="Featured Course 2">
+            <div class="card-body">
+                <h5 class="card-title">Devops Blog</h5>
+                <p class="card-text">Master the latest industry tools and techniques.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/picture/python-developerfet.png" class="card-img-top" alt="Featured Course 3">
+            <div class="card-body">
+                <h5 class="card-title">Python Blog</h5>
+                <p class="card-text">Build a strong foundation with fundamental concepts.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ... (remaining code) ... -->
+
+  
+  
+  
+<!-- Features Section -->
+<section id="features" class="container mt-5">
+    <h2>Key Features</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <h4>Expert Instructors</h4>
+            <p>Learn from industry experts with real-world experience.</p>
+        </div>
+        <div class="col-md-4">
+            <h4>Interactive Learning</h4>
+            <p>Engage in hands-on activities and quizzes for effective learning.</p>
+        </div>
+        <div class="col-md-4">
+            <h4>Flexible Schedule</h4>
+            <p>Access course materials at your own pace, anytime, anywhere.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Closing Section -->
+<section id="closing" class="container mt-5 text-center">
+    <p>Thank you for exploring our course offerings. Ready to start your learning journey? Enroll in a course today!</p>
+    <a href="#contact" class="btn btn-primary">Get Started</a>
+</section>
+
+
+
+
+<!-- Testimonials Section (Updated) -->
+<section id="testimonials" class="container mt-5">
+    <h2>What Our Students Say</h2>
+    <div id="carouselTestimonials" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0">"Great courses! I learned a lot and enjoyed the interactive lessons."</p>
+                    <footer class="blockquote-footer">John Doe</footer>
+                </blockquote>
+            </div>
+            <!-- Add more testimonials as needed -->
+        </div>
+        <a class="carousel-control-prev" href="#carouselTestimonials" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselTestimonials" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</section>
+
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="container mt-5">
+    <h2>Student Testimonials</h2>
+    <div id="carouselTestimonials" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0">"Great courses! I learned a lot and enjoyed the interactive lessons."</p>
+                    <footer class="blockquote-footer">John Doe</footer>
+                </blockquote>
+            </div>
+            <!-- Add more testimonials as needed -->
+        </div>
+        <a class="carousel-control-prev" href="#carouselTestimonials" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselTestimonials" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</section>
+  
+  
+  
+  <!-- ... (previous code) ... -->
+
+<!-- FAQ Section -->
+<section id="faq" class="container mt-5">
+    <h2>Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAccordion">
+        <!-- FAQ items will be dynamically added here using JavaScript -->
+    </div>
+</section>
+
+<!-- JavaScript (FAQ Section) -->
+<script>
+    // Sample FAQ data (replace with your actual data)
+    var faqs = [
+        { question: 'How do I enroll in a course?', answer: 'You can enroll in a course by clicking the "Enroll Now" button and filling out the enrollment form.' },
+        { question: 'Is there a money-back guarantee?', answer: 'Yes, we offer a 30-day money-back guarantee if you are not satisfied with the course.' },
+        { question: 'Are certificates provided upon completion?', answer: 'Yes, a certificate of completion is provided for each course.' },
+        // Add more FAQs as needed
+    ];
+
+    // Dynamically generate FAQ items
+    $(document).ready(function () {
+        var faqAccordion = $('#faqAccordion');
+
+        faqs.forEach(function (faq, index) {
+            var faqItem = `
+                <div class="card">
+                    <div class="card-header" id="faqHeading${index}">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#faqCollapse${index}" aria-expanded="true" aria-controls="faqCollapse${index}">
+                                ${faq.question}
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="faqCollapse${index}" class="collapse" aria-labelledby="faqHeading${index}" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            ${faq.answer}
+                        </div>
+                    </div>
+                </div>
+            `;
+            faqAccordion.append(faqItem);
+        });
+    });
+</script>
+
+<!-- ... (remaining code) ... -->
+
+
+
+
+<!-- ... (remaining code) ... -->
+
+
+<!-- Contact Section -->
+
+    <!-- Add your contact form or details here -->
+  <!-- ... (previous code) ... -->
+
+<!-- Contact Section -->
+<section id="contact" class="container mt-5">
+    <h2>Contact Us</h2>
+    <p>Have questions? Reach out to us!</p>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="name">Your Name</label>
+                <input type="text" class="form-control" id="name" placeholder="John Doe">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email">Your Email</label>
+                <input type="email" class="form-control" id="email" placeholder="john.doe@example.com">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea class="form-control" id="message" rows="4" placeholder="Write your message here..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+</section>
+
+<!-- ... (remaining code) ... -->
+
+
+  
+  <!-- ... (previous code) ... -->
+
+<!-- Social Media Section -->
+<section id="social" class="container mt-5">
+    <h2>Connect with Us</h2>
+    <div class="social-icons">
+        <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+</section>
+
+
+
+  
+  <!-- Footer Section -->
+  <footer class="footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="footer-p">
+                    <p>Millions of people of all ages and from around
+                        the world are improving their lives with us</p>
+                </div>
+            </div>
+            <div class="col-md-7 ml-auto">
+                <div class="footer-inner d-flex justify-content-between">
+                    <div class="footer-list-item">
+                        <ul class="list-unstyled">
+                            <li>Course</li>
+                            <li><a href="#">Graphic Design</a></li>
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Marketing</a></li>
+                            <li><a href="#">Engineering</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-list-item">
+                        <ul class="list-unstyled">
+                            <li>Terms</li>
+                            <li><a href="#">Graphic Design</a></li>
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Marketing</a></li>
+                            <li><a href="#">Engineering</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-list-item">
+                        <ul class="list-unstyled">
+                            <li>Useful Links</li>
+                            <li><a href="#">Graphic Design</a></li>
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Marketing</a></li>
+                            <li><a href="#">Engineering</a></li>
+                        </ul>
+                    </div>  
+                </div>                                      
+            </div>
+        </div>
+        <div class="copyright text-center">
+            <small>Copyright © 2024 Code Gurukul </small>
+        </div>
+    </div>
+</footer>
+<script>
+    function toggleDropdown(section) {
+        var content = document.getElementById(section);
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    }
+    </script>
+
+
+  <!-- ... (previous code) ... -->
+
+<!-- JavaScript -->
+    
+  <!-- ... (previous code) ... -->
+  
+
+<script>
+    // JavaScript to handle video switching in the iframe
+    $(document).ready(function () {
+        $('.nav-link').on('click', function (e) {
+            e.preventDefault();
+            var videoSrc = $(this).attr('href');
+            $('#videoPlayer').attr('src', videoSrc);
+        });
+    });
+</script>
+
+
+<!-- Testimonials Section (Updated JavaScript) -->
+
+
+
+
+
+
+<script>
+    // Sample testimonial data (replace with your actual data)
+    var testimonials = [
+        { quote: 'Great courses! I learned a lot and enjoyed the interactive lessons.', author: 'Soni Rai' },
+        { quote: 'Excellent content! The instructors are knowledgeable and engaging.', author: 'Rani Singh' },
+        // Add more testimonials as needed
+    ];
+
+    // Dynamically generate testimonials
+    $(document).ready(function () {
+        var testimonialContainer = $('.carousel-inner');
+
+        testimonials.forEach(function (testimonial, index) {
+            var activeClass = index === 0 ? 'active' : '';
+            var testimonialItem = `
+                <div class="carousel-item ${activeClass}">
+                    <blockquote class="blockquote text-center">
+                        <p class="mb-0">"${testimonial.quote}"</p>
+                        <footer class="blockquote-footer">${testimonial.author}</footer>
+                    </blockquote>
+                </div>
+            `;
+            testimonialContainer.append(testimonialItem);
+        });
+    });
+</script>
+
+<!-- ... (remaining code) ... -->
+
+<script>
+    // Smooth scrolling for anchor links
+    $(document).ready(function () {
+        $("a").on('click', function (event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+
+                var hash = this.hash;
+
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+                    window.location.hash = hash;
+                });
+            }
+        });
+    });
+
+    
+</script>
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<!-- JavaScript -->
+<script>
+    // Sample course data (replace with your actual data)
+    var courses = [
+        { title: 'DevOps in One video', description: 'DevOps, short for Development and Operations, is a collaborative approach that integrates software development and IT operations. This methodology aims to streamline the software delivery process, from coding and testing to deployment and monitoring. DevOps emphasizes automation, continuous integration, and continuous delivery to enhance efficiency, reduce errors, and accelerate the release of high-quality software. By fostering collaboration between development and operations teams, DevOps enables organizations to adapt quickly to changing requirements and deliver value to customers faster.', videoUrl: 'https://www.youtube.com/embed/j5Zsa_eOXeY?si=Q0vviPRUIiQebJsQ' },
+        { title: 'Python in One video', description: 'A Python one-minute video could highlight Python as a versatile and readable programming language. It could touch on its simplicity, emphasizing clean syntax and easy readability, making it an excellent choice for beginners and professionals alike. Mentioning its wide range of applications—from web development and data science to artificial intelligence—would showcase its versatility. Additionally, showcasing Python active community and vast library support would highlight its strength as a collaborative and robust language. In essence, the video aims to convey Python as an accessible, powerful, and community-driven language suitable for various domains.', videoUrl: 'https://www.youtube.com/embed/H2EJuAcrZYU?si=CQUbXjhmWWKx-mw9' },
+        // Add more courses as needed
+    ];
+
+    // Dynamically generate course cards and set video modal content
+    $(document).ready(function () {
+        var courseContainer = $('#courseContainer');
+        var courseVideoModal = $('#videoModal');
+        var courseVideo = $('#courseVideo');
+
+        courses.forEach(function (course, index) {
+            var card = `
+                <div class="card">
+                    <img src="https://media.licdn.com/dms/image/D4D12AQF4XvoJTyOh_A/article-cover_image-shrink_720_1280/0/1699551909901?e=2147483647&v=beta&t=7GUz7bYODo5GFjx-0jt_kdKMxZpj3lZLdY0kiNtWKC8" class="card-img-top" alt="${course.title} Image">
+                    <div class="card-body">
+                        <h5 class="card-title">${course.title}</h5>
+                        <p class="card-text">${course.description}</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#videoModal" data-video="${course.videoUrl}">
+                            Watch Video
+                        </button>
+                    </div>
+                </div>
+            `;
+            courseContainer.append(card);
+        });
+
+        // Update video modal content dynamically
+        $('#videoModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var videoUrl = button.data('video');
+            courseVideo.attr('src', videoUrl);
+        });
+
+        // Close video modal and stop video when modal is closed
+        $('#videoModal').on('hidden.bs.modal', function () {
+            courseVideo.attr('src', '');
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+<!-- ... (remaining code) ... -->
+<script>
+    // Sample FAQ data (replace with your actual data)
+    var faqs = [
+        { question: 'How do I enroll in a course?', answer: 'You can enroll in a course by clicking the "Enroll Now" button and filling out the enrollment form.' },
+        { question: 'Is there a money-back guarantee?', answer: 'Yes, we offer a 30-day money-back guarantee if you are not satisfied with the course.' },
+        { question: 'Are certificates provided upon completion?', answer: 'Yes, a certificate of completion is provided for each course.' },
+        // Add more FAQs as needed
+    ];
+
+    // Dynamically generate FAQ items
+    $(document).ready(function () {
+        var faqAccordion = $('#faqAccordion');
+
+        faqs.forEach(function (faq, index) {
+            var faqItem = `
+                <div class="card">
+                    <div class="card-header" id="faqHeading${index}">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#faqCollapse${index}" aria-expanded="true" aria-controls="faqCollapse${index}">
+                                ${faq.question}
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="faqCollapse${index}" class="collapse" aria-labelledby="faqHeading${index}" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            ${faq.answer}
+                        </div>
+                    </div>
+                </div>
+            `;
+            faqAccordion.append(faqItem);
+        });
+    });
+</script>
+
+
+</body>
+</html>

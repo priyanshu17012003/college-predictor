@@ -1,0 +1,119 @@
+
+.sec-padding{
+    padding-bottom: 80px;
+}
+.fixed-top{
+    background: #F0FFF0;
+}
+
+/* course-section */
+.title-text{
+    font-size: 36px;
+    line-height: 54px;
+    color: #413960;
+    font-weight: bold;
+    margin-bottom: 60px;
+}
+.card{
+    border: none;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+}
+.card-img-top{
+    padding: 20px;
+    padding-bottom: 0;
+}
+.card-body h5{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: #413960;
+    margin-bottom: 3px;
+}
+.card-body p{
+    font-size: 16px;
+    line-height: 24px;
+    color: #585859;
+    margin-bottom: 19px;
+}
+.buy-btn{
+    padding: 8px 27px;
+    background-color: #21B573;
+    color: #ffffff;
+    border: none;
+    border-radius: 33px;
+    transition: all .3s;
+}
+.buy-btn:hover{
+    background-color: #1d9660;
+}
+.card-footer{
+    background: #ffffff;
+    border-top: 0px;
+    border-radius: 18px !important;
+}
+.date img{
+    width: 24px;
+    height: 24px;
+}
+.date h6{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #585859;
+    margin-left: 3px;
+}
+
+/* Responsive Css */
+@media only screen and (max-width: 1024px) {
+    .header-section{
+        padding-top: 80px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .header-section {
+        height: 100%;
+        padding-bottom: 50px;
+        padding-top: 0;
+    }
+    .header-details {
+        padding-top: 120px;
+    }
+    .cards-inner{
+        margin-bottom: 20px;
+    }
+    .video-details {
+        margin-bottom: 50px;
+    }
+    .testimonial-inner{
+        text-align: center;
+    }
+    .testimonial-inner p{
+        margin-left: 0;
+    }
+    .nav-btn{
+        max-width: 20%;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .card-deck{
+        display: block !important;
+    }
+    .card{
+        margin-bottom: 30px !important;
+    }
+    
+}
+@media only screen and (max-width: 575px) {
+    .header-details h1 {
+        font-size: 44px;
+        line-height: 65px;
+        margin-bottom: 15px;
+    }
+    .footer-list-item ul li {
+        font-size: 14px;
+        line-height: 26px;
+    }
+}
