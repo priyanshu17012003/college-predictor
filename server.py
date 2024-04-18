@@ -20,7 +20,6 @@ def exam():
 def courses():
     return render_template('courses.html')
 
-
 @app.route('/predictCollege')
 def predictCollege():
     return render_template("predictCollege.html")
