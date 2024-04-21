@@ -66,6 +66,10 @@ def Python():
 def Math():
     return render_template("Math.html")
 
+@app.route('/Chemistry')
+def Chemistry():
+    return render_template("Chemistry.html")
+
 @app.route('/sortedResults')
 def sortedResults():
     start = float(request.args.get('minpercentage'))
